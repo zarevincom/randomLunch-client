@@ -2,7 +2,7 @@
 
 </script>
 
-<a href="" class="ButtonBase ButtonBase--gray"><slot></slot></a>
+<a href="" class="ButtonBase ButtonBase--gray col-sm"><slot></slot></a>
 
 <style lang="sass">
   .ButtonBase

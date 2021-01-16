@@ -17,24 +17,28 @@
         console.log(ifInfoAvailable)
     }
 </script>
-
+<link rel="stylesheet" href="/assets/css/bootstrap-grid.min.css">
 <main class="main-content" id="app">
     <div class="container">
         <header class="{marginBottom}">
-            <nav class="navigation">
-                <div class="nav-logo">
+            <nav class="navigation row">
+                <div class="nav-logo col-sm">
                     <div class="nav-logo__img"><img src="/assets/imgs/storefront.svg" alt="2Eat logo - an icon of a store"></div>
                     <div class="nav-logo__text">2Eat</div>
                 </div>
-                <div><button on:click={changeState}>Поменять состояние(кнопки тут не будет)</button></div>
+                <div class="col-sm"><button on:click={changeState}>Поменять состояние(кнопки тут не будет)</button></div>
                 <ButtonBase>Войти</ButtonBase>
             </nav>
         </header>
-        {#if ifInfoAvailable}
-            <AppInfo></AppInfo>
-        {:else}
-            <AppMap></AppMap>
-        {/if}
+    </div>
+    <div class="container">
+        <div class="row">
+            {#if ifInfoAvailable}
+                <AppInfo></AppInfo>
+            {:else}
+                <AppMap></AppMap>
+            {/if}
+        </div>
     </div>
 </main>
 
