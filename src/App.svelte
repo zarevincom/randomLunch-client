@@ -3,8 +3,19 @@
     import ButtonBase from './components/ButtonBase.svelte'
     import AppMap from './components/AppMap.svelte'
 
-    let ifInfoAvailable = true
-    let marginBottom = ifInfoAvailable === true ? 'mbToSection' : 'mbToMap'
+    let ifInfoAvailable = false
+    let marginBottom = ifInfoAvailable ? 'mbToSection' : 'mbToMap'
+
+    function changeState() {
+        if (ifInfoAvailable) {
+            ifInfoAvailable = false
+            marginBottom = 'mbToMap'
+        } else {
+            ifInfoAvailable = true
+            marginBottom = 'mbToSection'
+        }
+        console.log(ifInfoAvailable)
+    }
 </script>
 
 <main class="main-content" id="app">
@@ -15,6 +26,7 @@
                     <div class="nav-logo__img"><img src="/assets/imgs/storefront.svg" alt="2Eat logo - an icon of a store"></div>
                     <div class="nav-logo__text">2Eat</div>
                 </div>
+                <div><button on:click={changeState}>Поменять состояние(кнопки тут не будет)</button></div>
                 <ButtonBase>Войти</ButtonBase>
             </nav>
         </header>
