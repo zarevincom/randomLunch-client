@@ -2,9 +2,9 @@
 @font-face {
     font-family: 'TT Norms';
     src: local('TT Norms Regular'), local('TT-Norms-Regular'),
-    url('TTNorms-Regular.woff2') format('woff2'),
-    url('TTNorms-Regular.woff') format('woff'),
-    url('TTNorms-Regular.ttf') format('truetype');
+    url('./TTNorms-Regular.woff2') format('woff2'),
+    url('./TTNorms-Regular.woff') format('woff'),
+    url('./TTNorms-Regular.ttf') format('truetype');
     font-weight: 400;
     font-style: normal;
 }
@@ -12,9 +12,9 @@
 @font-face {
     font-family: 'TT Norms';
     src: local('TT Norms Medium'), local('TT-Norms-Medium'),
-    url('TTNorms-Medium.woff2') format('woff2'),
-    url('TTNorms-Medium.woff') format('woff'),
-    url('TTNorms-Medium.ttf') format('truetype');
+    url('./TTNorms-Medium.woff2') format('woff2'),
+    url('./TTNorms-Medium.woff') format('woff'),
+    url('./TTNorms-Medium.ttf') format('truetype');
     font-weight: 500;
     font-style: normal;
 }
@@ -22,9 +22,39 @@
 @font-face {
     font-family: 'TT Norms';
     src: local('TT Norms Bold'), local('TT-Norms-Bold'),
-    url('TTNorms-Bold.woff2') format('woff2'),
-    url('TTNorms-Bold.woff') format('woff'),
-    url('TTNorms-Bold.ttf') format('truetype');
+    url('./TTNorms-Bold.woff2') format('woff2'),
+    url('./TTNorms-Bold.woff') format('woff'),
+    url('./TTNorms-Bold.ttf') format('truetype');
     font-weight: 700;
     font-style: normal;
 }
+
+@font-face {
+    font-family: 'Proxima Nova Bold';
+    src: url('./ProximaNova-Bold.eot');
+    src: url('./ProximaNova-Bold.eot?#iefix') format('embedded-opentype'),
+    url('./ProximaNova-Bold.woff') format('woff'),
+    url('./ProximaNova-Bold.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Proxima Nova Extra Bold';
+    src: url('./ProximaNova-Extrabld.eot');
+    src: url('./ProximaNova-Extrabld.eot?#iefix') format('embedded-opentype'),
+    url('./ProximaNova-Extrabld.woff') format('woff'),
+    url('./ProximaNova-Extrabld.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Proxima Nova Semibold';
+    src: url('./ProximaNova-Semibold.eot');
+    src: url('./ProximaNova-Semibold.eot?#iefix') format('embedded-opentype'),
+    url('./ProximaNova-Semibold.woff') format('woff'),
+    url('./ProximaNova-Semibold.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+    }

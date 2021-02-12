@@ -1,80 +1,148 @@
 <script>
-    import AppInfo from './components/AppInfo.svelte'
-    import ButtonBase from './components/ButtonBase.svelte'
-    import AppMap from './components/AppMap.svelte'
-
-    let ifInfoAvailable = false
-    let marginBottom = ifInfoAvailable ? 'mbToSection' : 'mbToMap'
-
-    function changeState() {
-        if (ifInfoAvailable) {
-            ifInfoAvailable = false
-            marginBottom = 'mbToMap'
-        } else {
-            ifInfoAvailable = true
-            marginBottom = 'mbToSection'
-        }
-        console.log(ifInfoAvailable)
-    }
+  import ButtonBase from "./components/ButtonBase.svelte";
 </script>
-<link rel="stylesheet" href="/assets/css/bootstrap-grid.min.css">
+
 <main class="main-content" id="app">
-    <div class="container">
-        <header class="{marginBottom}">
-            <nav class="navigation row">
-                <div class="nav-logo col-sm">
-                    <div class="nav-logo__img"><img src="/assets/imgs/storefront.svg" alt="2Eat logo - an icon of a store"></div>
-                    <div class="nav-logo__text">2Eat</div>
-                </div>
-                <div class="col-sm"><button on:click={changeState}>Поменять состояние(кнопки тут не будет)</button></div>
-                <ButtonBase>Войти</ButtonBase>
-            </nav>
-        </header>
-    </div>
-    <div class="container">
-        <div class="row">
-            {#if ifInfoAvailable}
-                <AppInfo></AppInfo>
-            {:else}
-                <AppMap></AppMap>
-            {/if}
-        </div>
-    </div>
+	<header>
+		<div class="container">
+			<div class="navigation">
+				<div class="nav-logo">
+					<div class="nav-logo__img">
+						<img
+							src="/assets/imgs/logo.svg"
+							alt="2Eat logo - an icon of a store"
+						/>
+					</div>
+				</div>
+				<div class="navigation">
+					<!-- <div class="pure-u-4"><button on:click={changeState}>Поменять состояние(кнопки тут не будет)</button></div> -->
+					<ul>
+						<li><a href="/">О проекте</a></li>
+						<li><a href="/">Вопросы и ответы</a></li>
+						<li><a href="/">Вход</a></li>
+					</ul>
+				</div>
+			</div>
+		</div>
+	</header>
+	<section class="choose-location">
+		<div class="container">
+			<div class="choose-location__info">
+				<h2>Куда можно сходить</h2>
+				<ButtonBase>Найти место</ButtonBase>
+			</div>
+		</div>
+	</section>
+	<footer>
+		<div class="container">
+			<div class="footer">
+				<div class="footer__social">
+					<a href="/"><img src="/assets/imgs/social/vk.svg" alt=""></a>
+					<a href="/"><img src="/assets/imgs/social/instagram.svg" alt=""></a>
+					<a href="/"><img src="/assets/imgs/social/telegram.svg" alt=""></a>
+				</div>
+				<div class="footer__info">
+					<ul>
+						<li><a href="/">Связаться с нами</a></li>
+						<li><a href="/">Пользовательское соглашение</a></li>
+					</ul>
+				</div>
+			</div>
+		</div>
+	</footer>
 </main>
 
-<style type="text/sass">
-    .mbToSection
-      margin-bottom: 295px
-    .mbToMap
-      margin-bottom: 40px
-    body
+<style type="text/scss">
+main {
+	max-height: 1vh;
+}
+header {
+	max-height: 90px;
+}
+.container {
+	width: 1110px;
+	margin: 0 auto;
+}
+.navigation  {
+	min-width: 72px;
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+	padding: 18px 0;
+	font-family: 'Proxima Nova Semibold';
 
-      font-family: 'TT Norms'
-    .container
-      width: 80%
-      margin: 0 auto
+	.nav-logo {
+    max-width: 136px;
+	}
 
-    .navigation
-      min-width: 72px
-      display: flex
-      align-content: center
-      justify-content: space-between
-      padding: 20px 0
+	ul {
+		list-style: none;
+		display: flex;
+		align-content: center;
+		justify-content: space-between;
+	}
+	li {
+		margin-right: 40px;
 
-    .nav-logo
-      display: flex
-      align-content: center
-      justify-content: space-between
-      max-width: 100px
-      &__text
-        font-size: 26px
-        line-height: 31px
-        color: #000
-        margin-left: 10px
-        font-weight: 500
+		&:nth-child(3) {
+			margin-right: 16px;
+		}
+	}
+	a {
+		text-decoration: none;
+		color: #121212;
+	}
+}
+.choose-location {
+	margin-top: 92px;
+	display: flex;
+	flex-direction: column;
 
+	&__info {
+		display: flex;
+		justify-content: space-between;
+		align-items: center;
 
+		h2 {
+			font-size: 32px;
+			line-height: 40px;
+			font-family: 'Proxima Nova Bold';
+		}
+	}
 
+	
 
+}
+.footer {
+	margin-top: 700px;
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	&__social {
+		&:not(last-child) {
+			margin-right: 12px;
+		}
+	}
+	&__info {
+		font-family: 'Proxima Nova Semibold';
+		font-size: 16px;
 
+		ul {
+			display: flex;
+			list-style: none;
+		}
+
+		li {
+			&:not(:last-child) {
+				margin-right: 32px;
+			}
+		}
+
+		a {
+			color: #121212;
+			text-decoration: none;
+		}
+		
+	}
+}
 </style>
